@@ -5,3 +5,5 @@ obj/Debug/net5.0/DOTNET-RPG.assets.cache
 obj/Debug/net5.0/DOTNET-RPG.dll
 obj/Debug/net5.0/DOTNET-RPG.pdb
 obj/Debug/net5.0/ref/DOTNET-RPG.dll
+.vscode/launch.json
+.vscode/tasks.json
