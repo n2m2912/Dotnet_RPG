@@ -11,3 +11,6 @@ obj/Debug/net5.0/DOTNET-RPG.csproj.CoreCompileInputs.cache
 obj/project.nuget.cache
 obj/Debug/net5.0/DOTNET-RPG.csproj.AssemblyReference.cache
 obj/Debug/net5.0/DOTNET-RPG.csproj.FileListAbsolute.txt
+obj/DOTNET-RPG.csproj.nuget.dgspec.json
+obj/project.assets.json
+obj/Debug/net5.0/DOTNET-RPG.genruntimeconfig.cache
