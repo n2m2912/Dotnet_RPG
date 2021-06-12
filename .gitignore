@@ -8,3 +8,6 @@ obj/Debug/net5.0/ref/DOTNET-RPG.dll
 .vscode/launch.json
 .vscode/tasks.json
 obj/Debug/net5.0/DOTNET-RPG.csproj.CoreCompileInputs.cache
+obj/project.nuget.cache
+obj/Debug/net5.0/DOTNET-RPG.csproj.AssemblyReference.cache
+obj/Debug/net5.0/DOTNET-RPG.csproj.FileListAbsolute.txt
