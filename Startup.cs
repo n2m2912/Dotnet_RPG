@@ -17,6 +17,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
+using Microsoft.AspNetCore.Http;
 
 namespace DOTNET_RPG
 {
@@ -59,6 +60,7 @@ namespace DOTNET_RPG
                     ValidateAudience = false
                 };
             });
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
