@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.AspNetCore.Http;
 using DOTNET_RPG.Services.WeaponService;
+using DOTNET_RPG.Services.FightService;
 
 namespace DOTNET_RPG
 {
@@ -52,6 +53,7 @@ namespace DOTNET_RPG
             services.AddScoped<ICharacterService, CharacterService>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IWeaponService, WeaponService>();
+            services.AddScoped<IFightService, FightService>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option =>
             {
                 option.TokenValidationParameters = new TokenValidationParameters
