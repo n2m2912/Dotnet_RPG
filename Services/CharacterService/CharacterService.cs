@@ -84,18 +84,25 @@ namespace DOTNET_RPG.Services.CharacterService
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
             try
             {
-                Character character = await _context.Characters.FirstOrDefaultAsync(c => c.Id == updateCharacterDto.Id);
+                Character character = await _context.Characters.Include(c => c.User).FirstOrDefaultAsync(c => c.Id == updateCharacterDto.Id);
+                if (character.User.Id == GetUserId())
+                {
+                    character.Name = updateCharacterDto.Name;
+                    character.HitPoint = updateCharacterDto.HitPoint;
+                    character.Strength = updateCharacterDto.Strength;
+                    character.Defense = updateCharacterDto.Defense;
+                    character.Intelligence = updateCharacterDto.Intelligence;
+                    character.Class = updateCharacterDto.Class;
 
-                character.Name = updateCharacterDto.Name;
-                character.HitPoint = updateCharacterDto.HitPoint;
-                character.Strength = updateCharacterDto.Strength;
-                character.Defense = updateCharacterDto.Defense;
-                character.Intelligence = updateCharacterDto.Intelligence;
-                character.Class = updateCharacterDto.Class;
+                    await _context.SaveChangesAsync();
 
-                await _context.SaveChangesAsync();
-
-                serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
+                    serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
+                }
+                else
+                {
+                    serviceResponse.Success = false;
+                    serviceResponse.Message = "Character not found.";
+                }
             }
             catch (Exception ex)
             {
